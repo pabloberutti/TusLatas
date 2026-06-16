@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Lineups Mobile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 font-sans">
+
+    <header class="text-center mb-6">
+        <h1 class="text-2xl font-bold text-orange-500">CS2 Tactics</h1>
+        <p class="text-xs text-gray-400">Filtro rápido para Premiere</p>
+    </header>
+
+    <!-- Filtro de Mapas -->
+    <section class="mb-4">
+        <h2 class="text-sm font-semibold text-gray-400 mb-2">1. Elegí Mapa</h2>
+        <div class="grid grid-cols-2 gap-2">
+            <button onclick="seleccionarMapa('mirage')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Mirage</button>
+            <button onclick="seleccionarMapa('inferno')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Inferno</button>
+        </div>
+    </section>
+
+    <!-- Contenedor de Resultados -->
+    <section class="mt-6">
+        <h2 class="text-sm font-semibold text-gray-400 mb-2">Lineups Disponibles</h2>
+        <div id="lista-lineups" class="space-y-4">
+            <!-- JS va a inyectar las latas acá -->
+            <p class="text-gray-500 text-sm italic">Seleccioná un mapa para arrancar...</p>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[
+  {
+    "mapa": "mirage",
+    "bando": "T",
+    "tipo": "smoke",
+    "nombre": "Smoke Ventana (Desde Base T)",
+    "video_id": "dQw4w9WgXcQ"
+  },
+  {
+    "mapa": "mirage",
+    "bando": "CT",
+    "tipo": "flash",
+    "nombre": "Pop Flash para Palacio",
+    "video_id": "dQw4w9WgXcQ"
+  },
+  {
+    "mapa": "inferno",
+    "bando": "T",
+    "tipo": "molotov",
+    "nombre": "Molo Banana profunda",
+    "video_id": "dQw4w9WgXcQ"
+  }
+]
