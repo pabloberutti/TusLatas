@@ -1,23 +1,26 @@
 [
   {
-    "mapa": "mirage",
+    "mapa": "dust2",
     "bando": "T",
+    "zona": "A",
     "tipo": "smoke",
-    "nombre": "Smoke Ventana (Desde Base T)",
+    "nombre": "Smoke Baranda (Desde Base T)",
+    "video_id": "dQw4w9WgXcQ"
+  },
+  {
+    "mapa": "dust2",
+    "bando": "T",
+    "zona": "B",
+    "tipo": "molotov",
+    "nombre": "Molo Oscuro (Para limpiar entrada)",
     "video_id": "dQw4w9WgXcQ"
   },
   {
     "mapa": "mirage",
     "bando": "CT",
-    "tipo": "flash",
-    "nombre": "Pop Flash para Palacio",
-    "video_id": "dQw4w9WgXcQ"
-  },
-  {
-    "mapa": "inferno",
-    "bando": "T",
-    "tipo": "molotov",
-    "nombre": "Molo Banana profunda",
+    "zona": "MEDIO",
+    "tipo": "smoke",
+    "nombre": "Smoke de Retake para Conector",
     "video_id": "dQw4w9WgXcQ"
   }
 ]
