@@ -2,25 +2,28 @@
   {
     "mapa": "dust2",
     "bando": "T",
-    "zona": "A",
+    "zona": "MEDIO",
     "tipo": "smoke",
-    "nombre": "Smoke Baranda (Desde Base T)",
-    "video_id": "dQw4w9WgXcQ"
+    "nombre": "Smoke puerta de medio de CT (Desde Base T) + Molo opcional",
+    "plataforma": "tiktok",
+    "video_id": "7633202077711355157"
   },
   {
-    "mapa": "dust2",
+    "mapa": "mirage",
     "bando": "T",
-    "zona": "B",
-    "tipo": "molotov",
-    "nombre": "Molo Oscuro (Para limpiar entrada)",
+    "zona": "MEDIO",
+    "tipo": "smoke",
+    "nombre": "Smoke Ventana (Desde YouTube)",
+    "plataforma": "youtube",
     "video_id": "dQw4w9WgXcQ"
   },
   {
     "mapa": "mirage",
-    "bando": "CT",
-    "zona": "MEDIO",
-    "tipo": "smoke",
-    "nombre": "Smoke de Retake para Conector",
-    "video_id": "dQw4w9WgXcQ"
+    "bando": "T",
+    "zona": "A",
+    "tipo": "molotov",
+    "nombre": "Molo Palacio (Desde TikTok)",
+    "plataforma": "tiktok",
+    "video_id": "7123456789012345678"
   }
 ]

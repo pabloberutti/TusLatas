@@ -82,6 +82,15 @@ function renderizarTarjetas(lineupsFiltrados) {
         // Creamos un ID único para el contenedor de video sin espacios raros
         const idContenedorVideo = `video-${lata.mapa}-${lata.bando}-${lata.tipo}-${lata.video_id}`;
 
+        let plantillaMiniatura = '';
+        if (lata.plataforma === 'tiktok') {
+            // Fondo oscuro con estética TikTok para el formato vertical
+            plantillaMiniatura = `<div class="absolute w-full h-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center text-xs text-gray-400 font-bold uppercase tracking-widest">📱 TikTok Clip</div>`;
+            } else {
+            // Miniatura clásica de YouTube
+            plantillaMiniatura = `<img src="https://img.youtube.com/vi/${lata.video_id}/hqdefault.jpg" class="absolute w-full h-full object-cover opacity-50">`;
+        }
+
         card.innerHTML = `
             <div class="flex justify-between items-center mb-2">
                 <span class="text-xs font-bold uppercase px-2 py-0.5 rounded ${lata.bando === 'T' ? 'bg-yellow-600' : 'bg-blue-600'}">${lata.bando}</span>
@@ -90,8 +99,8 @@ function renderizarTarjetas(lineupsFiltrados) {
             <h3 class="font-bold text-sm mb-3 text-orange-400">${lata.nombre}</h3>
             
             <div id="${idContenedorVideo}" class="relative aspect-video bg-black rounded overflow-hidden flex items-center justify-center">
-                <img src="https://img.youtube.com/vi/${lata.video_id}/hqdefault.jpg" class="absolute w-full h-full object-cover opacity-50">
-                <button onclick="cargarVideo('${lata.video_id}', '${idContenedorVideo}')" class="relative z-10 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition">
+                ${plantillaMiniatura}
+                <button onclick="cargarVideo('${lata.video_id}', '${idContenedorVideo}', '${lata.plataforma}')" class="relative z-10 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition">
                     ▶ Ver Lineup
                 </button>
             </div>
@@ -100,11 +109,20 @@ function renderizarTarjetas(lineupsFiltrados) {
     });
 }
 
-function cargarVideo(id, containerId) {
+function cargarVideo(id, containerId, plataforma) {
     const container = document.getElementById(containerId);
-    container.innerHTML = `
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    `;
+    
+    if (plataforma === 'tiktok') {
+        // Iframe oficial para reproducir un video de TikTok embebido
+        container.innerHTML = `
+            <iframe class="w-full h-full" src="https://www.tiktok.com/embed/v2/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+    } else {
+        // Iframe clásico de YouTube
+        container.innerHTML = `
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+    }
 }
 
 // Función extra por si quieren volver a empezar desde cero
