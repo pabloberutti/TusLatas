@@ -3,39 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 Lineups</title>
-    <!-- Tailwind CSS CDN -->
+    <title>CS2 Lineups Mobile</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-900 text-white min-h-screen p-4 font-sans">
+<body class="bg-gray-900 text-white min-h-screen p-4 font-sans flex flex-col justify-between">
 
-    <header class="text-center mb-6">
-        <h1 class="text-2xl font-bold text-orange-500">Las mejores latas de CS2</h1>
-        <p class="text-xs text-gray-400">Filtro rápido para ranked</p>
-    </header>
+    <div>
+        <header class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-orange-500">CS2 Tactics</h1>
+            <p class="text-xs text-gray-400">Filtro rápido para Premiere</p>
+        </header>
 
-    <!-- Filtro de Mapas -->
-    <section class="mb-4">
-        <h2 class="text-sm font-semibold text-gray-400 mb-2">1. Elegí Mapa</h2>
-        <div class="grid grid-cols-2 gap-2">
-            <button onclick="seleccionarMapa('ancient')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Ancient</button>
-            <button onclick="seleccionarMapa('anubis')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Anubis</button>
-            <button onclick="seleccionarMapa('dust')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Dust 2</button>
-            <button onclick="seleccionarMapa('inferno')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Inferno</button>
-            <button onclick="seleccionarMapa('mirage')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Mirage</button>
-            <button onclick="seleccionarMapa('nuke')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Nuke</button>
-            <button onclick="seleccionarMapa('Overpass')" class="bg-gray-800 p-3 rounded font-bold hover:bg-orange-600 transition">Overpass</button>
-        </div>
-    </section>
+        <section id="seccion-mapas" class="mb-4">
+            <h2 class="text-sm font-semibold text-gray-400 mb-3 text-center">1. Elegí el Mapa</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <button onclick="seleccionarMapa('ancient')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Ancient</button>
+                <button onclick="seleccionarMapa('anubis')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Anubis</button>
+                <button onclick="seleccionarMapa('dust2')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Dust 2</button>
+                <button onclick="seleccionarMapa('inferno')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Inferno</button>
+                <button onclick="seleccionarMapa('mirage')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Mirage</button>
+                <button onclick="seleccionarMapa('nuke')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Nuke</button>
+                <button onclick="seleccionarMapa('overpass')" class="bg-gray-800 p-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition active:scale-95 shadow-md">Overpass</button>
+            </div>
+        </section>
 
-    <!-- Contenedor de Resultados -->
-    <section class="mt-6">
-        <h2 class="text-sm font-semibold text-gray-400 mb-2">Lineups Disponibles</h2>
-        <div id="lista-lineups" class="space-y-4">
-            <!-- JS va a inyectar las latas acá -->
-            <p class="text-gray-500 text-sm italic">Seleccioná un mapa para arrancar...</p>
-        </div>
-    </section>
+        <section id="seccion-bandos" class="mb-4 hidden">
+            <h2 class="text-sm font-semibold text-gray-400 mb-3 text-center">2. Seleccioná tu Bando</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <button onclick="seleccionarBando('T')" class="bg-amber-600 p-4 rounded-xl font-bold text-lg hover:bg-amber-700 transition active:scale-95 shadow-md">Terrorista (T)</button>
+                <button onclick="seleccionarBando('CT')" class="bg-blue-600 p-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition active:scale-95 shadow-md">Antiterrorista (CT)</button>
+            </div>
+        </section>
+
+        <section id="seccion-zonas" class="mb-4 hidden">
+            <h2 class="text-sm font-semibold text-gray-400 mb-3 text-center">3. ¿Qué zona atacás/defendés?</h2>
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="seleccionarZona('A')" class="bg-gray-800 py-4 px-2 rounded-xl font-bold text-md hover:bg-orange-600 transition active:scale-95 shadow-md">Sitio A</button>
+                <button onclick="seleccionarZona('MEDIO')" class="bg-gray-800 py-4 px-2 rounded-xl font-bold text-md hover:bg-orange-600 transition active:scale-95 shadow-md">Medio</button>
+                <button onclick="seleccionarZona('B')" class="bg-gray-800 py-4 px-2 rounded-xl font-bold text-md hover:bg-orange-600 transition active:scale-95 shadow-md">Sitio B</button>
+            </div>
+        </section>
+
+        <section id="seccion-tipos" class="mb-4 hidden">
+            <h2 class="text-sm font-semibold text-gray-400 mb-3 text-center">4. Tipo de Utilidad</h2>
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="seleccionarTipo('smoke')" class="bg-gray-700 py-3 px-1 rounded-xl font-bold text-sm hover:bg-gray-600 transition active:scale-95 shadow-md">☁️ Smoke</button>
+                <button onclick="seleccionarTipo('molotov')" class="bg-gray-700 py-3 px-1 rounded-xl font-bold text-sm hover:bg-orange-500 transition active:scale-95 shadow-md">🔥 Molo</button>
+                <button onclick="seleccionarTipo('flash')" class="bg-gray-700 py-3 px-1 rounded-xl font-bold text-sm hover:bg-yellow-500 transition active:scale-95 shadow-md">✨ Flash</button>
+            </div>
+        </section>
+
+        <section class="mt-6">
+            <div id="lista-lineups" class="space-y-4">
+                </div>
+        </section>
+    </div>
+
+    <footer class="mt-8 mb-4 text-center">
+        <button onclick="reiniciarFiltros()" class="w-full bg-red-900/40 text-red-300 border border-red-800 p-3 rounded-xl font-semibold hover:bg-red-900 transition active:scale-98">
+            🔄 Reiniciar Filtros / Cambiar Mapa
+        </button>
+    </footer>
 
     <script src="app.js"></script>
 </body>
